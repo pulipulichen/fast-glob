@@ -6,13 +6,13 @@ import type { RunnerOptions, SuiteMeasures, SuitePackResult } from './runner';
 import type Reporter from './reporter';
 
 class RunnerFakeProcess extends Runner {
-	public execNodeProcess(): string {
+	public override execNodeProcess(): string {
 		return '{"matches":1,"time":1,"memory":1}';
 	}
 }
 
 class RunnerFakeProcessError extends Runner {
-	public execNodeProcess(): string {
+	public override execNodeProcess(): string {
 		return 'error';
 	}
 }
@@ -20,11 +20,11 @@ class RunnerFakeProcessError extends Runner {
 class RunnerFakeReport extends RunnerFakeProcess {
 	public results: SuitePackResult[] = [];
 
-	public report(_: Reporter, result: SuitePackResult): void {
+	public override report(_: Reporter, result: SuitePackResult): void {
 		this.results.push(result);
 	}
 
-	public getSuites(): string[] {
+	public override getSuites(): string[] {
 		return ['suite.js'];
 	}
 }
