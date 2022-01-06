@@ -82,7 +82,7 @@ export default class Runner {
 			measures: this._getSuitePackMeasures()
 		};
 
-		for (let i = 0; i < this._options.launches; i++) {
+		for (let index = 0; index < this._options.launches; index++) {
 			try {
 				const { matches, time, memory } = this.suite(suitePath);
 

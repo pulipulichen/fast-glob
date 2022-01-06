@@ -89,9 +89,9 @@ function getTestCaseMochaDefinition(test: SmokeTest): MochaDefinition {
 	return it;
 }
 
-async function testCaseRunner(test: SmokeTest, func: typeof getFastGlobEntriesSync | typeof getFastGlobEntriesAsync): Promise<void> {
+async function testCaseRunner(test: SmokeTest, function_: typeof getFastGlobEntriesSync | typeof getFastGlobEntriesAsync): Promise<void> {
 	const expected = getNodeGlobEntries(test);
-	const actual = await func(test.pattern, test.ignore, test.cwd, test.fgOptions);
+	const actual = await function_(test.pattern, test.ignore, test.cwd, test.fgOptions);
 
 	if (test.debug === true) {
 		const report = generateDebugReport(expected, actual);
