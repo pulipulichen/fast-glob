@@ -66,8 +66,10 @@ function getTestCaseTitle(test: SmokeTest): string {
 		title += `, ignore: '${test.ignore}'`;
 	}
 
-	if (test.broken !== undefined) {
-		title += ` (broken - ${test.issue})`;
+	if (test.broken !== undefined && test.issue !== undefined) {
+		const issues = ([] as number[]).concat(test.issue).join(', ');
+
+		title += ` (broken - ${issues})`;
 	}
 
 	if (test.correct !== undefined) {
