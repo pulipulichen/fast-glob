@@ -2,10 +2,10 @@ import * as assert from 'assert';
 
 import * as utils from './utils';
 
-describe('Benchmark → Utils', () => {
-	const oldProcessHrtime = process.hrtime;
-	const oldProcessMemoryUsage = process.memoryUsage;
+const oldProcessHrtime = process.hrtime;
+const oldProcessMemoryUsage = process.memoryUsage;
 
+describe('Benchmark → Utils', () => {
 	before(() => {
 		process.env.FG_TEST_ENV_INTEGER = '1';
 		process.env.FG_TEST_ENV_OBJECT = '{ "value": true }';
