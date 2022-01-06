@@ -5,16 +5,16 @@ import * as fg from 'fast-glob';
 import * as utils from '../../../utils';
 
 const options: fg.Options = {
-	cwd: path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string),
+	cwd: path.join(process.cwd(), process.env['BENCHMARK_BASE_DIR'] as string),
 	unique: false,
-	...JSON.parse(process.env.BENCHMARK_OPTIONS as string) as fg.Options,
+	...JSON.parse(process.env['BENCHMARK_OPTIONS'] as string) as fg.Options,
 };
 
 const entries: string[] = [];
 
 const timeStart = utils.timeStart();
 
-const stream = fg.stream(process.env.BENCHMARK_PATTERN as string, options);
+const stream = fg.stream(process.env['BENCHMARK_PATTERN'] as string, options);
 
 stream.once('error', () => process.exit(0));
 stream.on('data', (entry: string) => entries.push(entry));

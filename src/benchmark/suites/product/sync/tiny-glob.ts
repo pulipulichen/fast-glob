@@ -6,14 +6,14 @@ import glob = require('tiny-glob/sync');
 import * as utils from '../../../utils';
 
 const options = {
-	cwd: path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string),
+	cwd: path.join(process.cwd(), process.env['BENCHMARK_BASE_DIR'] as string),
 	flush: true,
 };
 
 const timeStart = utils.timeStart();
 
 try {
-	const matches = glob(process.env.BENCHMARK_PATTERN as string, options);
+	const matches = glob(process.env['BENCHMARK_PATTERN'] as string, options);
 	const memory = utils.getMemory();
 	const time = utils.timeEnd(timeStart);
 	const measures = utils.formatMeasures(matches.length, time, memory);

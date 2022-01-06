@@ -5,13 +5,13 @@ import glob = require('tiny-glob'); // eslint-disable-line @typescript-eslint/no
 import * as utils from '../../../utils';
 
 const options = {
-	cwd: path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string),
+	cwd: path.join(process.cwd(), process.env['BENCHMARK_BASE_DIR'] as string),
 	flush: true,
 };
 
 const timeStart = utils.timeStart();
 
-glob(process.env.BENCHMARK_PATTERN as string, options)
+glob(process.env['BENCHMARK_PATTERN'] as string, options)
 	.then((matches) => {
 		const memory = utils.getMemory();
 		const time = utils.timeEnd(timeStart);

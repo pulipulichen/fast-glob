@@ -5,14 +5,14 @@ import * as fg from 'fast-glob';
 import * as utils from '../../../utils';
 
 const options: fg.Options = {
-	cwd: path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string),
+	cwd: path.join(process.cwd(), process.env['BENCHMARK_BASE_DIR'] as string),
 	unique: false,
-	...JSON.parse(process.env.BENCHMARK_OPTIONS as string) as fg.Options,
+	...JSON.parse(process.env['BENCHMARK_OPTIONS'] as string) as fg.Options,
 };
 
 const timeStart = utils.timeStart();
 
-fg(process.env.BENCHMARK_PATTERN as string, options)
+fg(process.env['BENCHMARK_PATTERN'] as string, options)
 	.then((matches) => {
 		const memory = utils.getMemory();
 		const time = utils.timeEnd(timeStart);

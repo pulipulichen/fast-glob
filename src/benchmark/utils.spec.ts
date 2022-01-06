@@ -5,18 +5,30 @@ import * as utils from './utils';
 const oldProcessHrtime = process.hrtime;
 const oldProcessMemoryUsage = process.memoryUsage;
 
+const FG_TEST_ENV_INTEGER_ENV_NAME = 'FG_TEST_ENV_INTEGER';
+const FG_TEST_ENV_OBJECT_ENV_NAME = 'FG_TEST_ENV_OBJECT';
+
+function setEnvironment(environmentName: string, value: string): void {
+	process.env[environmentName] = value;
+}
+
+function unsedEnvironment(environmentName: string): void {
+	// eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+	delete process.env[environmentName];
+}
+
 describe('Benchmark → Utils', () => {
 	before(() => {
-		process.env.FG_TEST_ENV_INTEGER = '1';
-		process.env.FG_TEST_ENV_OBJECT = '{ "value": true }';
+		setEnvironment(FG_TEST_ENV_INTEGER_ENV_NAME, '1');
+		setEnvironment(FG_TEST_ENV_OBJECT_ENV_NAME, '{ "value": true }');
 
 		process.hrtime = (() => [0, 1e7]) as NodeJS.HRTime;
 		process.memoryUsage = () => ({ external: 0, rss: 0, heapTotal: 0, heapUsed: 10 * 1e6 });
 	});
 
 	after(() => {
-		delete process.env.FG_TEST_ENV_INTEGER;
-		delete process.env.FG_TEST_ENV_OBJECT;
+		unsedEnvironment(FG_TEST_ENV_INTEGER_ENV_NAME);
+		unsedEnvironment(FG_TEST_ENV_OBJECT_ENV_NAME);
 
 		process.hrtime = oldProcessHrtime;
 		process.memoryUsage = oldProcessMemoryUsage;

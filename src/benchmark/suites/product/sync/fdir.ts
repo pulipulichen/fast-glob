@@ -6,8 +6,8 @@ import * as utils from '../../../utils';
 
 import type { PathsOutput } from 'fdir';
 
-const CWD = path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string);
-const PATTERN = process.env.BENCHMARK_PATTERN as string;
+const CWD = path.join(process.cwd(), process.env['BENCHMARK_BASE_DIR'] as string);
+const PATTERN = process.env['BENCHMARK_PATTERN'] as string;
 
 const glob = new GlobBuilder()
 	.glob(PATTERN)
