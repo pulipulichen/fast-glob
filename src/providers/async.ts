@@ -19,7 +19,9 @@ export default class ProviderAsync extends Provider<Promise<EntryItem[]>> {
 
 			stream.once('error', reject);
 			stream.on('data', (entry: Entry) => entries.push(options.transform(entry)));
-			stream.once('end', () => resolve(entries));
+			stream.once('end', () => {
+				resolve(entries);
+			});
 		});
 	}
 
