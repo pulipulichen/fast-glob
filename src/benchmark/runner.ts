@@ -8,7 +8,7 @@ import * as utils from './utils';
 
 import type { Options } from '../settings';
 
-export type RunnerOptions = {
+export interface RunnerOptions {
 	type: string;
 	mode: string;
 	pattern: string;
@@ -16,33 +16,33 @@ export type RunnerOptions = {
 	maxStdev: number;
 	retries: number;
 	options: Options;
-};
+}
 
-export type SuiteMeasures = {
+export interface SuiteMeasures {
 	matches: number;
 	time: number;
 	memory: number;
-};
+}
 
-export type Measure = {
+export interface Measure {
 	units: string;
 	raw: number[];
 	average: number;
 	stdev: number;
-};
+}
 
-export type SuitePackMeasures = {
+export interface SuitePackMeasures {
 	time: Measure;
 	memory: Measure;
-};
+}
 
-export type SuitePackResult = {
+export interface SuitePackResult {
 	name: string;
 	errors: number;
 	entries: number;
 	retries: number;
 	measures: SuitePackMeasures;
-};
+}
 
 export default class Runner {
 	constructor(private readonly _basedir: string, private readonly _options: RunnerOptions) {}

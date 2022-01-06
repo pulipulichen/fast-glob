@@ -9,7 +9,7 @@ import * as fg from '../..';
 import type { Options } from '../../settings';
 import type { Pattern } from '../../types';
 
-export type SmokeTest = {
+export interface SmokeTest {
 	pattern: Pattern;
 	ignore?: Pattern;
 	cwd?: string;
@@ -35,7 +35,7 @@ export type SmokeTest = {
 	 * The ability to conditionally run the test.
 	 */
 	condition?: () => boolean;
-};
+}
 
 type MochaDefinition = Mocha.ExclusiveTestFunction | Mocha.TestFunction;
 type DebugCompareTestMarker = '-' | '+';
