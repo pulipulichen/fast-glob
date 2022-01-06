@@ -1,6 +1,7 @@
 import * as path from 'path';
 
-import { fdir as GlobBuilder, PathsOutput } from 'fdir';
+import type { PathsOutput } from 'fdir';
+import { fdir as GlobBuilder } from 'fdir';
 
 import * as utils from '../../../utils';
 

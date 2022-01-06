@@ -1,7 +1,8 @@
 import * as assert from 'assert';
 
-import Runner, { RunnerOptions, SuiteMeasures, SuitePackResult } from './runner';
-import Reporter from './reporter';
+import type { RunnerOptions, SuiteMeasures, SuitePackResult } from './runner';
+import Runner from './runner';
+import type Reporter from './reporter';
 
 class RunnerFakeProcess extends Runner {
 	public execNodeProcess(): string {

@@ -1,7 +1,7 @@
 import * as logUpdate from 'log-update';
 import * as isCi from 'is-ci';
 
-import { SuitePackResult, Measure } from './runner';
+import type { SuitePackResult, Measure } from './runner';
 
 import Table = require('easy-table'); // eslint-disable-line @typescript-eslint/no-require-imports
 

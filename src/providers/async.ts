@@ -1,8 +1,8 @@
-import { Readable } from 'stream';
+import type { Readable } from 'stream';
 
-import { Task } from '../managers/tasks';
+import type { Task } from '../managers/tasks';
 import ReaderStream from '../readers/stream';
-import { Entry, EntryItem, ReaderOptions } from '../types';
+import type { Entry, EntryItem, ReaderOptions } from '../types';
 import Provider from './provider';
 
 export default class ProviderAsync extends Provider<Promise<EntryItem[]>> {

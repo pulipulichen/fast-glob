@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { Options } from '../settings';
+import type { Options } from '../settings';
 import Reporter from './reporter';
 import * as utils from './utils';
 

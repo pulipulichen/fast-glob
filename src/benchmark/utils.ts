@@ -1,4 +1,4 @@
-import { SuiteMeasures } from './runner';
+import type { SuiteMeasures } from './runner';
 
 import stdev = require('compute-stdev'); // eslint-disable-line @typescript-eslint/no-require-imports
 

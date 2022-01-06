@@ -4,8 +4,8 @@ import * as path from 'path';
 import * as glob from 'glob';
 
 import * as fg from '../..';
-import { Options } from '../../settings';
-import { Pattern } from '../../types';
+import type { Options } from '../../settings';
+import type { Pattern } from '../../types';
 
 import Table = require('easy-table'); // eslint-disable-line @typescript-eslint/no-require-imports
 

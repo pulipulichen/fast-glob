@@ -1,7 +1,8 @@
 import * as minimist from 'minimist';
 
 import * as logger from './logger';
-import Runner, { RunnerOptions } from './runner';
+import type { RunnerOptions } from './runner';
+import Runner from './runner';
 import * as utils from './utils';
 
 const PROCESS_FIRST_ARGUMENT_INDEX = 2;
