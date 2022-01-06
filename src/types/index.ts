@@ -1,5 +1,7 @@
 import type * as fsWalk from '@nodelib/fs.walk';
 
+export type Dict<T = unknown> = Record<string, T>;
+
 export type ErrnoException = NodeJS.ErrnoException;
 
 export type Entry = fsWalk.Entry;
@@ -7,7 +9,7 @@ export type EntryItem = Entry | string;
 
 export type Pattern = string;
 export type PatternRe = RegExp;
-export type PatternsGroup = Record<string, Pattern[]>;
+export type PatternsGroup = Dict<Pattern[]>;
 
 export type ReaderOptions = fsWalk.Options & {
 	transform: (entry: Entry) => EntryItem;

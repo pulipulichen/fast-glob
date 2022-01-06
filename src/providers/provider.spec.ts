@@ -7,10 +7,10 @@ import Provider from './provider';
 
 import type { Task } from '../managers/tasks';
 import type { Options } from '../settings';
-import type { MicromatchOptions, ReaderOptions } from '../types';
+import type { Dict, MicromatchOptions, ReaderOptions } from '../types';
 
-class TestProvider extends Provider<Array<{}>> {
-	public read(): Array<{}> {
+class TestProvider extends Provider<Dict[]> {
+	public read(): Dict[] {
 		return [];
 	}
 

@@ -1,5 +1,6 @@
 import stdev = require('compute-stdev'); // eslint-disable-line @typescript-eslint/no-require-imports
 
+import type { Dict } from '../types';
 import type { SuiteMeasures } from './runner';
 
 const NANOSECONDS_IN_SECOND = 1e9;
@@ -56,8 +57,8 @@ export function getEnvironmentAsInteger(name: string, value: number): number {
 	return environment === undefined ? value : Number.parseInt(environment, 10);
 }
 
-export function getEnvironmentAsObject(name: string, value: object): object {
+export function getEnvironmentAsObject(name: string, value: Dict): Dict {
 	const environment = process.env[name];
 
-	return environment === undefined ? value : JSON.parse(environment) as object;
+	return environment === undefined ? value : JSON.parse(environment) as Dict;
 }
