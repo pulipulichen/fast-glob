@@ -1,9 +1,9 @@
-import type { Readable } from 'stream';
-
-import type { Task } from '../managers/tasks';
 import ReaderStream from '../readers/stream';
-import type { Entry, EntryItem, ReaderOptions } from '../types';
 import Provider from './provider';
+
+import type { Readable } from 'stream';
+import type { Task } from '../managers/tasks';
+import type { Entry, EntryItem, ReaderOptions } from '../types';
 
 export default class ProviderAsync extends Provider<Promise<EntryItem[]>> {
 	protected _reader: ReaderStream = new ReaderStream(this._settings);

@@ -1,9 +1,10 @@
 import * as path from 'path';
 
-import type { PathsOutput } from 'fdir';
 import { fdir as GlobBuilder } from 'fdir';
 
 import * as utils from '../../../utils';
+
+import type { PathsOutput } from 'fdir';
 
 const CWD = path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string);
 const PATTERN = process.env.BENCHMARK_PATTERN as string;

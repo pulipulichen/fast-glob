@@ -1,11 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import type { Options } from '../settings';
+import execa = require('execa'); // eslint-disable-line @typescript-eslint/no-require-imports
+
 import Reporter from './reporter';
 import * as utils from './utils';
 
-import execa = require('execa'); // eslint-disable-line @typescript-eslint/no-require-imports
+import type { Options } from '../settings';
 
 export type RunnerOptions = {
 	type: string;

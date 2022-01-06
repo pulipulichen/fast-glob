@@ -2,12 +2,12 @@ import * as assert from 'assert';
 import * as path from 'path';
 
 import * as glob from 'glob';
+import Table = require('easy-table'); // eslint-disable-line @typescript-eslint/no-require-imports
 
 import * as fg from '../..';
+
 import type { Options } from '../../settings';
 import type { Pattern } from '../../types';
-
-import Table = require('easy-table'); // eslint-disable-line @typescript-eslint/no-require-imports
 
 export type SmokeTest = {
 	pattern: Pattern;

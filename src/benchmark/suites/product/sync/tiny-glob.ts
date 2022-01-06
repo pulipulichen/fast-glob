@@ -1,9 +1,9 @@
 import * as path from 'path';
 
-import * as utils from '../../../utils';
-
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 import glob = require('tiny-glob/sync');
+
+import * as utils from '../../../utils';
 
 const options = {
 	cwd: path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string),

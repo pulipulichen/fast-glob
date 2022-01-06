@@ -1,9 +1,10 @@
 import * as minimist from 'minimist';
 
 import * as logger from './logger';
-import type { RunnerOptions } from './runner';
 import Runner from './runner';
 import * as utils from './utils';
+
+import type { RunnerOptions } from './runner';
 
 const PROCESS_FIRST_ARGUMENT_INDEX = 2;
 const DEFAULT_BENCHMARK_LAUNCHES = 10;

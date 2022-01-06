@@ -1,9 +1,8 @@
 import * as logUpdate from 'log-update';
 import * as isCi from 'is-ci';
+import Table = require('easy-table'); // eslint-disable-line @typescript-eslint/no-require-imports
 
 import type { SuitePackResult, Measure } from './runner';
-
-import Table = require('easy-table'); // eslint-disable-line @typescript-eslint/no-require-imports
 
 const FRACTION_DIGITS = 3;
 

@@ -1,6 +1,7 @@
 import * as assert from 'assert';
 
 import Reporter from './reporter';
+
 import type { SuitePackResult } from './runner';
 
 describe('Benchmark → Reporter', () => {
