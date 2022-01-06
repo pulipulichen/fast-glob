@@ -8,7 +8,7 @@ const options: glob.IOptions = {
 	cwd: path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string),
 	nosort: true,
 	nounique: true,
-	nodir: true
+	nodir: true,
 };
 
 const timeStart = utils.timeStart();

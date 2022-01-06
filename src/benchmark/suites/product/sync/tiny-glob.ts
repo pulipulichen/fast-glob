@@ -7,7 +7,7 @@ import * as utils from '../../../utils';
 
 const options = {
 	cwd: path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string),
-	flush: true
+	flush: true,
 };
 
 const timeStart = utils.timeStart();

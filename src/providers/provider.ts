@@ -37,7 +37,7 @@ export default abstract class Provider<T> {
 			fs: this._settings.fs,
 			stats: this._settings.stats,
 			throwErrorOnBrokenSymbolicLink: this._settings.throwErrorOnBrokenSymbolicLink,
-			transform: this.entryTransformer.getTransformer()
+			transform: this.entryTransformer.getTransformer(),
 		};
 	}
 
@@ -50,7 +50,7 @@ export default abstract class Provider<T> {
 			noext: !this._settings.extglob,
 			noglobstar: !this._settings.globstar,
 			posix: true,
-			strictSlashes: false
+			strictSlashes: false,
 		};
 	}
 }

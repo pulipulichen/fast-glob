@@ -92,7 +92,7 @@ describe('Providers → ProviderStream', () => {
 			const stream = new PassThrough({
 				read(): void {
 					stream.emit('error', tests.errno.getEnoent());
-				}
+				},
 			});
 
 			provider.reader.dynamic.returns(stream);

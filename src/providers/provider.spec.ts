@@ -108,7 +108,7 @@ describe('Providers → Provider', () => {
 				noext: false,
 				noglobstar: false,
 				posix: true,
-				strictSlashes: false
+				strictSlashes: false,
 			};
 
 			const actual = provider.getMicromatchOptions();

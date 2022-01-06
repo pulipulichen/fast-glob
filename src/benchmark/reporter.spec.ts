@@ -12,8 +12,8 @@ describe('Benchmark → Reporter', () => {
 		entries: 1,
 		measures: {
 			time: { raw: [1, 1, 1], average: 1, stdev: 0, units: 'ms' },
-			memory: { raw: [1, 1, 1], average: 1, stdev: 0, units: 'MB' }
-		}
+			memory: { raw: [1, 1, 1], average: 1, stdev: 0, units: 'MB' },
+		},
 	};
 
 	describe('.format', () => {
@@ -26,7 +26,7 @@ describe('Benchmark → Reporter', () => {
 				'Name  Time, ms  Time stdev, %  Memory, MB  Memory stdev, %  Entries  Errors  Retries',
 				'----  --------  -------------  ----------  ---------------  -------  ------  -------',
 				'name  1.000     0.000          1.000       0.000            1        0       1      ',
-				''
+				'',
 			].join('\n');
 
 			const actual = reporter.format();

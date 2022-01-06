@@ -25,38 +25,38 @@ smoke.suite('Smoke → Directories', [
 		pattern: 'fixtures/*',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: 'fixtures/**',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: 'fixtures/**/*',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: 'fixtures/*/',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: 'fixtures/**/',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: 'fixtures/**/*/',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
-	}
+		globTransform,
+	},
 ]);
 
 smoke.suite('Smoke → Directories (cwd)', [
@@ -65,41 +65,41 @@ smoke.suite('Smoke → Directories (cwd)', [
 		cwd: 'fixtures',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: '**',
 		cwd: 'fixtures',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: '**/*',
 		cwd: 'fixtures',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: '*/',
 		cwd: 'fixtures',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: '**/',
 		cwd: 'fixtures',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
+		globTransform,
 	},
 	{
 		pattern: '**/*/',
 		cwd: 'fixtures',
 		fgOptions: { onlyDirectories: true },
 		globFilter,
-		globTransform
-	}
+		globTransform,
+	},
 ]);

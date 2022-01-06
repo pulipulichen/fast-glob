@@ -23,11 +23,11 @@ const defaultArgv: Arguments = {
 	launches: utils.getEnvironmentAsInteger('BENCHMARK_LAUNCHES', DEFAULT_BENCHMARK_LAUNCHES),
 	maxStdev: utils.getEnvironmentAsInteger('BENCHMARK_MAX_STDEV', DEFAULT_BENCHMARK_MAX_STDEV),
 	retries: utils.getEnvironmentAsInteger('BENCHMARK_RETRIES', DEFAULT_BENCHMARK_RETRIES),
-	options: utils.getEnvironmentAsObject('BENCHMARK_OPTIONS', {})
+	options: utils.getEnvironmentAsObject('BENCHMARK_OPTIONS', {}),
 };
 
 const argv = minimist<Arguments>(process.argv.slice(PROCESS_FIRST_ARGUMENT_INDEX), {
-	default: defaultArgv
+	default: defaultArgv,
 });
 
 const runner = new Runner(argv.basedir, argv);

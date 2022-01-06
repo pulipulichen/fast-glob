@@ -21,7 +21,7 @@ function getEntryFilterInstance(options?: Options): EntryFilter {
 	const settings = new Settings(options);
 
 	return new EntryFilter(settings, {
-		dot: settings.dot
+		dot: settings.dot,
 	});
 }
 
@@ -78,7 +78,7 @@ describe('Providers → Filters → Entry', () => {
 
 			it('should reject a duplicate entry', () => {
 				const filter = getFilter({
-					positive: ['**/*']
+					positive: ['**/*'],
 				});
 
 				filter(FILE_ENTRY);
@@ -91,7 +91,7 @@ describe('Providers → Filters → Entry', () => {
 			it('should accept a duplicate entry when an option is disabled', () => {
 				const filter = getFilter({
 					positive: ['**/*'],
-					options: { unique: false }
+					options: { unique: false },
 				});
 
 				filter(FILE_ENTRY);
@@ -106,21 +106,21 @@ describe('Providers → Filters → Entry', () => {
 			it('should reject a directory entry', () => {
 				reject(DIRECTORY_ENTRY, {
 					positive: ['**/*'],
-					options: { onlyFiles: true }
+					options: { onlyFiles: true },
 				});
 			});
 
 			it('should accept a directory entry', () => {
 				accept(DIRECTORY_ENTRY, {
 					positive: ['**/*'],
-					options: { onlyFiles: false }
+					options: { onlyFiles: false },
 				});
 			});
 
 			it('should accept a file entry', () => {
 				accept(FILE_ENTRY, {
 					positive: ['**/*'],
-					options: { onlyFiles: true }
+					options: { onlyFiles: true },
 				});
 			});
 		});
@@ -129,14 +129,14 @@ describe('Providers → Filters → Entry', () => {
 			it('should reject a file entry', () => {
 				reject(FILE_ENTRY, {
 					positive: ['**/*'],
-					options: { onlyDirectories: true }
+					options: { onlyDirectories: true },
 				});
 			});
 
 			it('should accept a directory entry', () => {
 				accept(DIRECTORY_ENTRY, {
 					positive: ['**/*'],
-					options: { onlyDirectories: true }
+					options: { onlyDirectories: true },
 				});
 			});
 		});
@@ -146,7 +146,7 @@ describe('Providers → Filters → Entry', () => {
 				reject(FILE_ENTRY, {
 					positive: ['**/*'],
 					negative: ['**/*'],
-					options: { absolute: true }
+					options: { absolute: true },
 				});
 			});
 
@@ -156,7 +156,7 @@ describe('Providers → Filters → Entry', () => {
 				reject(FILE_ENTRY, {
 					positive: ['**/*'],
 					negative: [negative],
-					options: { absolute: true }
+					options: { absolute: true },
 				});
 			});
 
@@ -164,7 +164,7 @@ describe('Providers → Filters → Entry', () => {
 				accept(FILE_ENTRY, {
 					positive: ['**/*'],
 					negative: ['*'],
-					options: { absolute: true }
+					options: { absolute: true },
 				});
 			});
 
@@ -174,7 +174,7 @@ describe('Providers → Filters → Entry', () => {
 				accept(FILE_ENTRY, {
 					positive: ['**/*'],
 					negative: [negative],
-					options: { absolute: true }
+					options: { absolute: true },
 				});
 			});
 		});
@@ -183,14 +183,14 @@ describe('Providers → Filters → Entry', () => {
 			it('should reject an entry', () => {
 				reject(FILE_ENTRY, {
 					positive: ['*'],
-					options: { baseNameMatch: false }
+					options: { baseNameMatch: false },
 				});
 			});
 
 			it('should accept an entry', () => {
 				accept(FILE_ENTRY, {
 					positive: ['*'],
-					options: { baseNameMatch: true }
+					options: { baseNameMatch: true },
 				});
 			});
 		});
@@ -199,19 +199,19 @@ describe('Providers → Filters → Entry', () => {
 			it('should reject when an entry match to the negative pattern', () => {
 				reject(FILE_ENTRY, {
 					positive: ['**/*'],
-					negative: ['**/*']
+					negative: ['**/*'],
 				});
 			});
 
 			it('should reject when an entry does not match to the positive pattern', () => {
 				reject(FILE_ENTRY, {
-					positive: ['*']
+					positive: ['*'],
 				});
 			});
 
 			it('should accept when an entry match to the positive pattern with a leading dot', () => {
 				accept(FILE_ENTRY, {
-					positive: ['./**/*']
+					positive: ['./**/*'],
 				});
 			});
 
@@ -219,13 +219,13 @@ describe('Providers → Filters → Entry', () => {
 				const entry = tests.entry.builder().path('./root/file.txt').file().build();
 
 				accept(entry, {
-					positive: ['**/*']
+					positive: ['**/*'],
 				});
 			});
 
 			it('should accept when an entry match to the positive pattern', () => {
 				accept(FILE_ENTRY, {
-					positive: ['**/*']
+					positive: ['**/*'],
 				});
 			});
 		});
@@ -234,7 +234,7 @@ describe('Providers → Filters → Entry', () => {
 	describe('Immutability', () => {
 		it('should return the data without changes', () => {
 			const filter = getFilter({
-				positive: ['**/*']
+				positive: ['**/*'],
 			});
 
 			const reference = tests.entry.builder().path('root/file.txt').file().build();

@@ -3,12 +3,12 @@ import * as smoke from './smoke';
 smoke.suite('Smoke → Static', [
 	{ pattern: 'fixtures' },
 	{ pattern: 'fixtures/file.md' },
-	{ pattern: 'fixtures/first' }
+	{ pattern: 'fixtures/first' },
 ]);
 
 smoke.suite('Smoke → Static (cwd)', [
 	{ pattern: 'file.md', cwd: 'fixtures' },
-	{ pattern: 'first', cwd: 'fixtures' }
+	{ pattern: 'first', cwd: 'fixtures' },
 ]);
 
 smoke.suite('Smoke → Static (ignore)', [
@@ -23,7 +23,7 @@ smoke.suite('Smoke → Static (ignore)', [
 		{ pattern: 'fixtures/file.md', ignore: 'fixtures/*.md' },
 		{ pattern: 'fixtures/file.md', ignore: 'fixtures/*' },
 		{ pattern: 'fixtures/file.md', ignore: 'fixtures/**' },
-		{ pattern: 'fixtures/file.md', ignore: 'fixtures/**/*' }
+		{ pattern: 'fixtures/file.md', ignore: 'fixtures/**/*' },
 	],
 
 	// Directories
@@ -35,8 +35,8 @@ smoke.suite('Smoke → Static (ignore)', [
 		{ pattern: 'fixtures/first', ignore: 'fixtures/first' },
 		{ pattern: 'fixtures/first', ignore: 'fixtures/*' },
 		{ pattern: 'fixtures/first', ignore: 'fixtures/**' },
-		{ pattern: 'fixtures/first', ignore: 'fixtures/**/*' }
-	]
+		{ pattern: 'fixtures/first', ignore: 'fixtures/**/*' },
+	],
 ]);
 
 smoke.suite('Smoke → Static (ignore & cwd)', [
@@ -46,7 +46,7 @@ smoke.suite('Smoke → Static (ignore & cwd)', [
 		{ pattern: 'fixtures/file.md', ignore: '*.md', cwd: 'fixtures' },
 		{ pattern: 'fixtures/file.md', ignore: '*', cwd: 'fixtures' },
 		{ pattern: 'fixtures/file.md', ignore: '**', cwd: 'fixtures' },
-		{ pattern: 'fixtures/file.md', ignore: '**/*', cwd: 'fixtures' }
+		{ pattern: 'fixtures/file.md', ignore: '**/*', cwd: 'fixtures' },
 	],
 
 	// Directories
@@ -54,11 +54,11 @@ smoke.suite('Smoke → Static (ignore & cwd)', [
 		{ pattern: 'fixtures/first', ignore: 'first', cwd: 'fixtures' },
 		{ pattern: 'fixtures/first', ignore: '*', cwd: 'fixtures' },
 		{ pattern: 'fixtures/first', ignore: '**', cwd: 'fixtures' },
-		{ pattern: 'fixtures/first', ignore: '**/*', cwd: 'fixtures' }
-	]
+		{ pattern: 'fixtures/first', ignore: '**/*', cwd: 'fixtures' },
+	],
 ]);
 
 smoke.suite('Smoke → Static (relative)', [
 	{ pattern: '../file.md', cwd: 'fixtures/first' },
-	{ pattern: '../../file.md', cwd: 'fixtures/first/nested' }
+	{ pattern: '../../file.md', cwd: 'fixtures/first/nested' },
 ]);

@@ -59,7 +59,7 @@ export default class Runner {
 			NODE_ENV: 'production',
 			BENCHMARK_BASE_DIR: this._basedir,
 			BENCHMARK_PATTERN: this._options.pattern,
-			BENCHMARK_OPTIONS: JSON.stringify(this._options.options)
+			BENCHMARK_OPTIONS: JSON.stringify(this._options.options),
 		};
 
 		const execaOptions: execa.SyncOptions = { env: environment, extendEnv: true };
@@ -79,7 +79,7 @@ export default class Runner {
 			errors: 0,
 			entries: 0,
 			retries: retries + 1,
-			measures: this._getSuitePackMeasures()
+			measures: this._getSuitePackMeasures(),
 		};
 
 		for (let index = 0; index < this._options.launches; index++) {
@@ -100,7 +100,7 @@ export default class Runner {
 
 		results.measures = {
 			time: this._getMeasures(results.measures.time.raw, 'ms'),
-			memory: this._getMeasures(results.measures.memory.raw, 'MB')
+			memory: this._getMeasures(results.measures.memory.raw, 'MB'),
 		};
 
 		return results;
@@ -141,14 +141,14 @@ export default class Runner {
 			units,
 			raw,
 			average: utils.getAverageValue(raw),
-			stdev: utils.getStdev(raw)
+			stdev: utils.getStdev(raw),
 		};
 	}
 
 	private _getSuitePackMeasures(): SuitePackMeasures {
 		return {
 			time: this._getMeasures([], 'ms'),
-			memory: this._getMeasures([], 'MB')
+			memory: this._getMeasures([], 'MB'),
 		};
 	}
 }

@@ -4,11 +4,11 @@ smoke.suite('Smoke → Ignore', [
 	{
 		pattern: 'fixtures/**/*',
 		globOptions: { ignore: ['**/*.md'] },
-		fgOptions: { ignore: ['**/*.md'] }
+		fgOptions: { ignore: ['**/*.md'] },
 	},
 	{
 		pattern: 'fixtures/**/*',
 		globOptions: { ignore: ['**/*.md'] },
-		fgOptions: { ignore: ['!**/*.md'] }
-	}
+		fgOptions: { ignore: ['!**/*.md'] },
+	},
 ]);

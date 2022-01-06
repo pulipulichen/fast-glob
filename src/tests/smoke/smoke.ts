@@ -197,6 +197,6 @@ function getFastGlobOptions(ignore?: Pattern, cwd?: string, options?: Options): 
 		cwd: cwd === undefined ? process.cwd() : cwd,
 		ignore: ignore === undefined ? [] : [ignore],
 		onlyFiles: false,
-		...options
+		...options,
 	};
 }

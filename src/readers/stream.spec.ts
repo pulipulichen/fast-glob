@@ -84,7 +84,7 @@ describe('Readers → ReaderStream', () => {
 			const reader = getReader();
 			const readerOptions = getReaderOptions({
 				errorFilter: () => false,
-				entryFilter: () => true
+				entryFilter: () => true,
 			});
 
 			reader.stat.onFirstCall().yields(tests.errno.getEperm());
@@ -105,7 +105,7 @@ describe('Readers → ReaderStream', () => {
 			const reader = getReader();
 			const readerOptions = getReaderOptions({
 				errorFilter: () => true,
-				entryFilter: () => true
+				entryFilter: () => true,
 			});
 
 			reader.stat.onFirstCall().yields(tests.errno.getEnoent());

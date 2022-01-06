@@ -12,7 +12,7 @@ export default abstract class Reader<T> {
 	protected readonly _fsStatSettings: fsStat.Settings = new fsStat.Settings({
 		followSymbolicLink: this._settings.followSymbolicLinks,
 		fs: this._settings.fs,
-		throwErrorOnBrokenSymbolicLink: this._settings.followSymbolicLinks
+		throwErrorOnBrokenSymbolicLink: this._settings.followSymbolicLinks,
 	});
 
 	constructor(protected readonly _settings: Settings) {}
@@ -28,7 +28,7 @@ export default abstract class Reader<T> {
 		const entry: Entry = {
 			name: pattern,
 			path: pattern,
-			dirent: utils.fs.createDirentFromStats(pattern, stats)
+			dirent: utils.fs.createDirentFromStats(pattern, stats),
 		};
 
 		if (this._settings.stats) {

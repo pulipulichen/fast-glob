@@ -37,7 +37,7 @@ describe('Benchmark → Runner', () => {
 		launches: 3,
 		maxStdev: 3,
 		retries: 5,
-		options: {}
+		options: {},
 	};
 
 	describe('.suite', () => {
@@ -47,7 +47,7 @@ describe('Benchmark → Runner', () => {
 			const expected: SuiteMeasures = {
 				matches: 1,
 				time: 1,
-				memory: 1
+				memory: 1,
 			};
 
 			const actual = runner.suite('suitePath');
@@ -73,8 +73,8 @@ describe('Benchmark → Runner', () => {
 				entries: 1,
 				measures: {
 					time: { raw: [1, 1, 1], average: 1, stdev: 0, units: 'ms' },
-					memory: { raw: [1, 1, 1], average: 1, stdev: 0, units: 'MB' }
-				}
+					memory: { raw: [1, 1, 1], average: 1, stdev: 0, units: 'MB' },
+				},
 			};
 
 			const actual = runner.suitePack('suitePath', 0);
@@ -92,8 +92,8 @@ describe('Benchmark → Runner', () => {
 				entries: 0,
 				measures: {
 					time: { raw: [0, 0, 0], average: 0, stdev: 0, units: 'ms' },
-					memory: { raw: [0, 0, 0], average: 0, stdev: 0, units: 'MB' }
-				}
+					memory: { raw: [0, 0, 0], average: 0, stdev: 0, units: 'MB' },
+				},
 			};
 
 			const actual = runner.suitePack('suitePath', 0);
@@ -113,8 +113,8 @@ describe('Benchmark → Runner', () => {
 				retries: 1,
 				measures: {
 					time: { raw: [1, 1, 1], average: 1, stdev: 0, units: 'ms' },
-					memory: { raw: [1, 1, 1], average: 1, stdev: 0, units: 'MB' }
-				}
+					memory: { raw: [1, 1, 1], average: 1, stdev: 0, units: 'MB' },
+				},
 			}];
 
 			runner.packs();

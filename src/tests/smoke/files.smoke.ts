@@ -4,18 +4,18 @@ smoke.suite('Smoke → Files', [
 	{
 		pattern: 'fixtures/*',
 		globOptions: { nodir: true },
-		fgOptions: { onlyFiles: true }
+		fgOptions: { onlyFiles: true },
 	},
 	{
 		pattern: 'fixtures/**',
 		globOptions: { nodir: true },
-		fgOptions: { onlyFiles: true }
+		fgOptions: { onlyFiles: true },
 	},
 	{
 		pattern: 'fixtures/**/*',
 		globOptions: { nodir: true },
-		fgOptions: { onlyFiles: true }
-	}
+		fgOptions: { onlyFiles: true },
+	},
 ]);
 
 smoke.suite('Smoke → Files (cwd)', [
@@ -23,18 +23,18 @@ smoke.suite('Smoke → Files (cwd)', [
 		pattern: '*',
 		cwd: 'fixtures',
 		globOptions: { nodir: true },
-		fgOptions: { onlyFiles: true }
+		fgOptions: { onlyFiles: true },
 	},
 	{
 		pattern: '**',
 		cwd: 'fixtures',
 		globOptions: { nodir: true },
-		fgOptions: { onlyFiles: true }
+		fgOptions: { onlyFiles: true },
 	},
 	{
 		pattern: '**/*',
 		cwd: 'fixtures',
 		globOptions: { nodir: true },
-		fgOptions: { onlyFiles: true }
-	}
+		fgOptions: { onlyFiles: true },
+	},
 ]);

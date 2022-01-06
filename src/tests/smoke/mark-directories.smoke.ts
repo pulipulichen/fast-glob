@@ -4,6 +4,6 @@ smoke.suite('Smoke → MarkDirectories', [
 	{
 		pattern: 'fixtures/**/*',
 		globOptions: { mark: true },
-		fgOptions: { markDirectories: true }
-	}
+		fgOptions: { markDirectories: true },
+	},
 ]);
