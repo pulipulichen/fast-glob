@@ -53,7 +53,7 @@ export function getEnvironmentAsString(name: string, value: string): string {
 export function getEnvironmentAsInteger(name: string, value: number): number {
 	const environment = process.env[name];
 
-	return environment === undefined ? value : parseInt(environment, 10);
+	return environment === undefined ? value : Number.parseInt(environment, 10);
 }
 
 export function getEnvironmentAsObject(name: string, value: object): object {
