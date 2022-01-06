@@ -25,7 +25,7 @@ export type SmokeTest = {
 	 * Mark test case as broken. This is requires a issue to repair.
 	 */
 	broken?: boolean;
-	issue?: number | number[];
+	issue?: number[] | number;
 	/**
 	 * Mark test case as correct. This is requires a reason why is true.
 	 */
@@ -37,8 +37,8 @@ export type SmokeTest = {
 	condition?: () => boolean;
 };
 
-type MochaDefinition = Mocha.TestFunction | Mocha.ExclusiveTestFunction;
-type DebugCompareTestMarker = '+' | '-';
+type MochaDefinition = Mocha.ExclusiveTestFunction | Mocha.TestFunction;
+type DebugCompareTestMarker = '-' | '+';
 
 export function suite(name: string, tests: Array<SmokeTest | SmokeTest[]>): void {
 	const testCases = getTestCases(tests);
@@ -89,7 +89,7 @@ function getTestCaseMochaDefinition(test: SmokeTest): MochaDefinition {
 	return it;
 }
 
-async function testCaseRunner(test: SmokeTest, function_: typeof getFastGlobEntriesSync | typeof getFastGlobEntriesAsync): Promise<void> {
+async function testCaseRunner(test: SmokeTest, function_: typeof getFastGlobEntriesAsync | typeof getFastGlobEntriesSync): Promise<void> {
 	const expected = getNodeGlobEntries(test);
 	const actual = await function_(test.pattern, test.ignore, test.cwd, test.fgOptions);
 
