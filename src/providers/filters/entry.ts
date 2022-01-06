@@ -6,7 +6,7 @@ import type { Entry, EntryFilterFunction, MicromatchOptions, Pattern, PatternRe 
 export default class EntryFilter {
 	public readonly index: Map<string, undefined> = new Map();
 
-	constructor(private readonly _settings: Settings, private readonly _micromatchOptions: MicromatchOptions) { }
+	constructor(private readonly _settings: Settings, private readonly _micromatchOptions: MicromatchOptions) {}
 
 	public getFilter(positive: Pattern[], negative: Pattern[]): EntryFilterFunction {
 		const positiveRe = utils.pattern.convertPatternsToRe(positive, this._micromatchOptions);

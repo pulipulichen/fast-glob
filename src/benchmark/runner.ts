@@ -45,7 +45,7 @@ export type SuitePackResult = {
 };
 
 export default class Runner {
-	constructor(private readonly _basedir: string, private readonly _options: RunnerOptions) { }
+	constructor(private readonly _basedir: string, private readonly _options: RunnerOptions) {}
 
 	public execNodeProcess(args: string[], options: Partial<execa.SyncOptions>): string {
 		return execa.sync('node', args, options).stdout;
