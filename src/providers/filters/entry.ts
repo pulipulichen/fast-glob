@@ -72,6 +72,6 @@ export default class EntryFilter {
 	private _isMatchToPatterns(entryPath: string, patternsRe: PatternRe[]): boolean {
 		const filepath = utils.path.removeLeadingDotSegment(entryPath);
 
-		return utils.pattern.matchAny(filepath, patternsRe) || utils.pattern.matchAny(filepath + '/', patternsRe);
+		return utils.pattern.matchAny(filepath, patternsRe) || utils.pattern.matchAny(`${filepath}/`, patternsRe);
 	}
 }
