@@ -7,7 +7,7 @@ import * as utils from '../../../utils';
 const options: fg.Options = {
 	cwd: path.join(process.cwd(), process.env.BENCHMARK_BASE_DIR as string),
 	unique: false,
-	...JSON.parse(process.env.BENCHMARK_OPTIONS as string),
+	...JSON.parse(process.env.BENCHMARK_OPTIONS as string) as fg.Options,
 };
 
 const timeStart = utils.timeStart();
