@@ -1,5 +1,5 @@
 {
-  "name": "fast-glob",
+  "name": "@pulipuli.chen/fast-glob",
   "version": "3.2.11",
   "description": "It's a very fast and efficient glob library for Node.js",
   "license": "MIT",
@@ -8,6 +8,13 @@
     "name": "Denis Malinochkin",
     "url": "https://mrmlnc.com"
   },
+  "contributors": [
+    {
+      "author": "Pulipuli Chen",
+      "email" : "blog@pulipuli.info", 
+      "url" : "http://blog.pulipuli.info/"
+    }
+  ],
   "engines": {
     "node": ">=8.6.0"
   },
